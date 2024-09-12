@@ -1,0 +1,56 @@
+{
+    "streamingServices": [
+      {
+        "serviceName": "Netflix",
+        "topics": [
+          "Original Drama",
+          "Movies and the Unexpected"
+        ],
+        "ageRange": "All Ages",
+        "image": "http://localhost:8080/images/netflix.png"
+      },
+      {
+        "serviceName": "Disney+ Premium",
+        "topics": [
+          "Wide-Ranging Entertainment, Reality"
+        ],
+        "ageRange": "Children and Family",
+        "image": "http://localhost:8080/images/disney.png"
+      },
+      {
+        "serviceName": "Apple TV+",
+        "topics": [
+          "Original Drama",
+          "Science and Discovery"
+        ],
+        "ageRange": "All Ages",
+        "image": "http://localhost:8080/images/apple.png"
+      },
+      {
+        "serviceName": "Crave",
+        "topics": [
+          "Movies and the Unexpected"
+        ],
+        "ageRange": "Adult",
+        "image": "http://localhost:8080/images/crave.png"
+      },
+      {
+        "serviceName": "WWE Network HD",
+        "topics": [
+          "Sports"
+        ],
+        "ageRange": "Teen and Adult",
+        "image": "http://localhost:8080/images/wwe.png"
+      },
+      {
+        "serviceName": "Abu Dhabi TV",
+        "topics": [
+          "Regional Favorites"
+        ],
+        "ageRange": "All Ages",
+        "image": "http://localhost:8080/images/abudhabi.png"
+      }
+    ]
+  }
+  
+  
