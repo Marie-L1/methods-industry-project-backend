@@ -1,6 +1,6 @@
 import express from "express";
-import { validatePlanInput } from "../middlewares/validation";
-import { getRecommendation } from "../utils/recommendation";
+import { validatePlanInput } from "../middlewares/validation.js";
+import { getRecommendation } from "../utils/recommendation.js";
 import dotenv from "dotenv";
 
 dotenv.config();
