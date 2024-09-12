@@ -5,3 +5,5 @@ const getRecommendation = (budget, age, favorite_genre) => {
         theme_packs: [],
     };
 };
+
+export { getRecommendation };
