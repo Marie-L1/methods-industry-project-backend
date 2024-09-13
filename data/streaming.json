@@ -12,7 +12,7 @@
       {
         "services_name": "Disney+ Premium",
         "topics": [
-          "Wide-Ranging Entertainment, Reality"
+          "Wide-Ranging Entertainment"
         ],
         "age_range": "Children and Family",
         "image": "http://localhost:8080/images/disney.png"
