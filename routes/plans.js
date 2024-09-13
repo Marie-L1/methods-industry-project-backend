@@ -1,47 +1,38 @@
 import express from "express";
-import { validatePlanInput } from "../middlewares/validation";
-import { getRecommendation } from "../utils/recommendation";
+import { validatePlanInput } from "../middlewares/validation.js";
+import { logRequest } from "../middlewares/log.js";
+import { getRecommendation } from "../utils/recommendation.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const router = express.Router();
 
-router.post("/", validatePlanInput, (req, res) => {
+router.post("/", logRequest, validatePlanInput, (req, res) => {
+  try {
     const { budget, family_members } = req.body;
     const recommendation = getRecommendation(budget, family_members);
-    res.json(recommendation);
+    const { streaming_services, theme_packs } = recommendation;
+    replaceThemePackImageUrls(theme_packs);
+    replaceStreamingServiceImageUrls(streaming_services);
+    res.json({ streaming_services, theme_packs });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
+const replaceThemePackImageUrls = (theme_packs) => {
+  theme_packs.forEach((theme_pack) => {
+    theme_pack.channels.forEach((channel) => {
+      channel.image = replaceImageUrl(channel.image);
+    });
+  });
+};
 
-// recommendations
-
-let userPreferences = [];
-
-// endpoint to receive user preferences
-router.post("/preferences", (req, res) => {
-    const { themePack } = req.body;
-
-    try{
-        if (themePack) {
-            // only store the theme packs
-            userPreferences.push(themePack);
-            res.json(userPreferences)
-        } else{
-          res.status(400).json({ message: "Theme pack is required" })
-        }
-
-    }catch(error){
-        res.status(400).json({ message: "Couldn't log preference." }, error);
-    }
-})
-
-// endpoint to handle generating the recommendations
-router.get("/recommendations", (req, res) => {
-  try{
-    // get the recommendations based on the user preferences
-    const recommendation = getRecommendation(userPreferences);
-    res.json(recommendation)
-  }catch(error){
-    res.status(400).json({ message: "Couldn't log recommendation." }, error);
-  }
-})
+const replaceStreamingServiceImageUrls = (streaming_services) => {
+  streaming_services.forEach((service) => {
+    service.image = replaceImageUrl(service.image);
+  });
+};
 
 export default router;

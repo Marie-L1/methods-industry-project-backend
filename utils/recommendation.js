@@ -47,3 +47,5 @@ const getRecommendation = (theme_packs) => {
         theme_packs:[mostPopular]
     };
 };
+
+export { getRecommendation };
