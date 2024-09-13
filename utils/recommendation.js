@@ -1,9 +1,6 @@
-import streaming from "../data/streaming.json" assert { type: 'json' };
-import themepack from "../data/themepack.json" assert { type: 'json' };
 
-// const streaming = require("../data/streaming.json");
-// const themepack = require("../data/themepack.json");
-
+const streaming = require("../data/streaming.json");
+const themepack = require("../data/themepack.json");
 // get all unique genres from the json file
 const getGenre = () => {
     const genres = new Set();
@@ -15,7 +12,7 @@ const getGenre = () => {
     return Array.from(genres);
 };
 
-// get them packages based on the selected genre
+// Get theme packs based on the selected genre
 const getPackByGenre = (genre) => {
     return themepack.packages.filter(pack => 
         pack.channels.some(channel => 
@@ -23,18 +20,89 @@ const getPackByGenre = (genre) => {
     );
 };
 
-// get streaming service based on the theme package's topic 
+// Get streaming service based on the theme package's topic 
 const getServiceByTopic = (topic) => {
     return streaming.streamingServices.filter(service => 
         service.topics.includes(topic)
     );
 };
 
+// Get recommendations based on budget and family members
+const getRecommendationForFamily = (budget, familyMembers) => {
+    // Iterate over family members and get their favorite genres
+    const familyGenres = familyMembers.map(member => member.favorite_genre);
+
+    // Get the theme packs that match the family members' genres
+    const selectedPacks = familyGenres.map(genre => getPackByGenre(genre));
+
+    // Count the occurrences of topics across all selected theme packs
+    const topicCount = countTopics(selectedPacks.flat()); // Flatten the array since each genre may return multiple packs
+
+    // Get the most common topic from the selected packs
+    const mostCommonTopic = getMostCommonTopic(topicCount);
+
+    // Get the recommended streaming service based on the most common topic
+    const recommendedService = getServiceByTopic(mostCommonTopic);
+
+    return {
+        budget: budget,  // Keep budget in response
+        themePacks: selectedPacks,
+        streamingService: recommendedService.length > 0 ? recommendedService[0].services_name : "Default Streaming Service"
+    };
+};
+
+// Count the occurrences of topics across all theme packs
+const countTopics = (selectedPacks) => {
+    const topicCount = {};
+    selectedPacks.forEach(pack => {
+        if (pack.topic) {
+            if (topicCount[pack.topic]) {
+                topicCount[pack.topic] += 1;
+            } else {
+                topicCount[pack.topic] = 1;
+            }
+        }
+    });
+    return topicCount;
+};
+
+// Get the most common topic from the selected packs
+const getMostCommonTopic = (topicCount) => {
+    let maxCount = 0;
+    let mostCommonTopic = null;
+    for (const topic in topicCount) {
+        if (topicCount[topic] > maxCount) {
+            maxCount = topicCount[topic];
+            mostCommonTopic = topic;
+        }
+    }
+    return mostCommonTopic;
+};
+
+// Example usage:
+const familyData = {
+    "budget": 123,
+    "family_members": [
+        {
+            "age": 12,
+            "favorite_genre": "Science"
+        },
+        {
+            "age": 45,
+            "favorite_genre": "Drama"
+        }
+    ]
+};
+
+const recommendation = getRecommendationForFamily(familyData.budget, familyData.family_members);
+console.log(recommendation);
+
 // export functions for all other files
 export {
     getGenre,
     getPackByGenre,
-    getServiceByTopic
+    getServiceByTopic,
+    getRecommendationForFamily
 };
 
 

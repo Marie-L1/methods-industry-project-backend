@@ -71,4 +71,6 @@ router.post("/", logRequest, validatePlanInput, (req, res) => {
   }
 })
 
+app.use('/recommendation', recommendationRouter); 
+
 export default router;
