@@ -1,0 +1,170 @@
+{
+    "name": "Optik Channel Packages",
+    "packages": [
+      {
+        "package_id": 1,
+        "package_name": "Primetime",
+        "topic": "Original Drama",
+        "image": "http://localhost:8080/images/pkg1.png",
+        "channels": [
+          { "channel_id": 101, "channel_name": "A&E", "genre": "Drama" },
+          { "channel_id": 102, "channel_name": "AMC", "genre": "Drama" },
+          { "channel_id": 103, "channel_name": "CTVDrama", "genre": "Drama" },
+          { "channel_id": 104, "channel_name": "TLC", "genre": "Drama" }
+        ]
+      },
+      {
+        "package_id": 2,
+        "package_name": "Living",
+        "topic": "Food Lovers and DIY",
+        "image": "http://localhost:8080/images/pkg2.png",
+        "channels": [
+          { "channel_id": 201, "channel_name": "CottageLife", "genre": "Lifestyle" },
+          { "channel_id": 202, "channel_name": "FoodNetwork", "genre": "Food" },
+          { "channel_id": 203, "channel_name": "HGTV", "genre": "DIY" },
+          { "channel_id": 204, "channel_name": "Makeful", "genre": "DIY" },
+          { "channel_id": 205, "channel_name": "The Cooking Channel", "genre": "Food" },
+          { "channel_id": 206, "channel_name": "Magnolia Network", "genre": "Lifestyle" }
+        ]
+      },
+      {
+        "package_id": 3,
+        "package_name": "Sportsnet & Beyond",
+        "topic": "Sports",
+        "image": "http://localhost:8080/images/pkg3.png",
+        "channels": [
+          { "channel_id": 301, "channel_name": "Golf Channel", "genre": "Sports" },
+          { "channel_id": 302, "channel_name": "NFL Network", "genre": "Sports" },
+          { "channel_id": 303, "channel_name": "SN Vancouver Hockey", "genre": "Sports" },
+          { "channel_id": 304, "channel_name": "SportsNet360", "genre": "Sports" },
+          { "channel_id": 305, "channel_name": "Sportsnet One", "genre": "Sports" },
+          { "channel_id": 306, "channel_name": "Sportsnet Pacific", "genre": "Sports" },
+          { "channel_id": 307, "channel_name": "Sportsnet West", "genre": "Sports" },
+          { "channel_id": 308, "channel_name": "Sportsnet East", "genre": "Sports" }
+        ]
+      },
+      {
+        "package_id": 4,
+        "package_name": "TSN & Beyond",
+        "topic": "Sports",
+        "image": "http://localhost:8080/images/pkg4.png",
+        "channels": [
+          { "channel_id": 401, "channel_name": "Golf Channel", "genre": "Sports" },
+          { "channel_id": 402, "channel_name": "NFL Network", "genre": "Sports" },
+          { "channel_id": 403, "channel_name": "TSN1", "genre": "Sports" },
+          { "channel_id": 404, "channel_name": "TSN2", "genre": "Sports" },
+          { "channel_id": 405, "channel_name": "TSN3", "genre": "Sports" },
+          { "channel_id": 406, "channel_name": "TSN4", "genre": "Sports" },
+          { "channel_id": 407, "channel_name": "TSN5", "genre": "Sports" }
+        ]
+      },
+      {
+        "package_id": 5,
+        "package_name": "Blockbusters",
+        "topic": "Movies and the Unexpected",
+        "image": "http://localhost:8080/images/pkg5.png",
+        "channels": [
+          { "channel_id": 501, "channel_name": "Adult Swim", "genre": "Movies" },
+          { "channel_id": 502, "channel_name": "Crime+Investigation", "genre": "Movies" },
+          { "channel_id": 503, "channel_name": "FX Canada", "genre": "Movies" },
+          { "channel_id": 504, "channel_name": "FXX", "genre": "Movies" },
+          { "channel_id": 505, "channel_name": "MovieTime", "genre": "Movies" }
+        ]
+      },
+      {
+        "package_id": 6,
+        "package_name": "World & Beyond",
+        "topic": "Science and Discovery",
+        "image": "http://localhost:8080/images/pkg6.png",
+        "channels": [
+          { "channel_id": 601, "channel_name": "CTV Sci-Fi Channel", "genre": "Science" },
+          { "channel_id": 602, "channel_name": "Discovery", "genre": "Science" },
+          { "channel_id": 603, "channel_name": "Discovery Science", "genre": "Science" },
+          { "channel_id": 604, "channel_name": "History Television", "genre": "History" },
+          { "channel_id": 605, "channel_name": "Investigation Discovery", "genre": "Discovery" }
+        ]
+      },
+      {
+        "package_id": 7,
+        "package_name": "Lifestyle & Beyond",
+        "topic": "Wide-Ranging Entertainment, Reality",
+        "image": "http://localhost:8080/images/pkg7.png",
+        "channels": [
+          { "channel_id": 701, "channel_name": "BET", "genre": "Entertainment" },
+          { "channel_id": 702, "channel_name": "Lifetime", "genre": "Entertainment" },
+          { "channel_id": 703, "channel_name": "Showcase", "genre": "Entertainment" },
+          { "channel_id": 704, "channel_name": "Slice", "genre": "Reality" },
+          { "channel_id": 705, "channel_name": "W Network", "genre": "Entertainment" }
+        ]
+      },
+      {
+        "package_id": 8,
+        "package_name": "Explore",
+        "topic": "Nature/Discovery",
+        "image": "http://localhost:8080/images/pkg8.png",
+        "channels": [
+          { "channel_id": 801, "channel_name": "Animal Planet", "genre": "Nature" },
+          { "channel_id": 802, "channel_name": "DTOUR", "genre": "Discovery" },
+          { "channel_id": 803, "channel_name": "Nat Geo Wild", "genre": "Nature" },
+          { "channel_id": 804, "channel_name": "National Geographic", "genre": "Discovery" }
+        ]
+      },
+      {
+        "package_id": 9,
+        "package_name": "Time Shift",
+        "topic": "Regional Favorites",
+        "image": "http://localhost:8080/images/pkg9.png",
+        "channels": [
+          { "channel_id": 901, "channel_name": "CTV", "genre": "Regional" },
+          { "channel_id": 902, "channel_name": "CBC Calgary", "genre": "Regional" },
+          { "channel_id": 903, "channel_name": "ABC Boston", "genre": "Regional" },
+          { "channel_id": 904, "channel_name": "CBC Edmonton", "genre": "Regional" },
+          { "channel_id": 905, "channel_name": "CBC Halifax", "genre": "Regional" },
+          { "channel_id": 906, "channel_name": "CBC Toronto", "genre": "Regional" },
+          { "channel_id": 907, "channel_name": "CBC Winnipeg", "genre": "Regional" },
+          { "channel_id": 908, "channel_name": "CBS Boston", "genre": "Regional" },
+          { "channel_id": 909, "channel_name": "Citytv Calgary", "genre": "Regional" },
+          { "channel_id": 910, "channel_name": "Citytv Edmonton", "genre": "Regional" },
+          { "channel_id": 911, "channel_name": "Citytv Toronto", "genre": "Regional" },
+          { "channel_id": 912, "channel_name": "CTV Calgary", "genre": "Regional" },
+          { "channel_id": 913, "channel_name": "CTV Edmonton", "genre": "Regional" },
+          { "channel_id": 914, "channel_name": "CTV Halifax", "genre": "Regional" },
+          { "channel_id": 915, "channel_name": "CTV Montreal", "genre": "Regional" },
+          { "channel_id": 916, "channel_name": "CTV Toronto", "genre": "Regional" },
+          { "channel_id": 917, "channel_name": "CTV Winnipeg", "genre": "Regional" },
+          { "channel_id": 918, "channel_name": "FOX Boston", "genre": "Regional" },
+          { "channel_id": 919, "channel_name": "Global BC", "genre": "Regional" },
+          { "channel_id": 920, "channel_name": "Global Calgary", "genre": "Regional" },
+          { "channel_id": 921, "channel_name": "Global Edmonton", "genre": "Regional" },
+          { "channel_id": 922, "channel_name": "Global Halifax", "genre": "Regional" },
+          { "channel_id": 923, "channel_name": "Global Toronto", "genre": "Regional" },
+          { "channel_id": 924, "channel_name": "NBC Boston", "genre": "Regional" },
+          { "channel_id": 925, "channel_name": "NTV", "genre": "Regional" },
+          { "channel_id": 926, "channel_name": "PBS Boston", "genre": "Regional" }
+        ]
+      },
+      {
+        "package_id": 10,
+        "package_name": "Laughs and Cheers",
+        "topic": "Comedy",
+        "image": "http://localhost:8080/images/pkg10.png",
+        "channels": [
+          { "channel_id": 1001, "channel_name": "CTV Comedy Channel", "genre": "Comedy" },
+          { "channel_id": 1002, "channel_name": "DejaView", "genre": "Comedy" },
+          { "channel_id": 1003, "channel_name": "Game Show Network", "genre": "Comedy" }
+        ]
+      },
+      {
+        "package_id": 11,
+        "package_name": "Amazon Prime",
+        "topic": "Prime",
+        "image": "http://localhost:8080/images/pkg11.png",
+        "channels": [
+          { "channel_id": 1101, "channel_name": "PrimeVideo", "genre": "Prime" }
+        ]
+      }
+    ]
+  }
+  
+         
+  
