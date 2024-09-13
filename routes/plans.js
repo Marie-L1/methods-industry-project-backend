@@ -2,6 +2,7 @@ import express from "express";
 import { validatePlanInput } from "../middlewares/validation.js";
 import { logRequest } from "../middlewares/log.js";
 import { getRecommendation } from "../utils/recommendation.js";
+import { replaceImageUrl } from "../utils/resourceHandler.js";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -22,16 +23,18 @@ router.post("/", logRequest, validatePlanInput, (req, res) => {
 });
 
 const replaceThemePackImageUrls = (theme_packs) => {
-  theme_packs.forEach((theme_pack) => {
-    theme_pack.channels.forEach((channel) => {
-      channel.image = replaceImageUrl(channel.image);
+    theme_packs.forEach((theme_pack) => {
+      if (theme_pack.image) {
+        theme_pack.image = replaceImageUrl(theme_pack.image);
+      }
     });
-  });
 };
 
 const replaceStreamingServiceImageUrls = (streaming_services) => {
   streaming_services.forEach((service) => {
-    service.image = replaceImageUrl(service.image);
+    if (service.image) {
+      service.image = replaceImageUrl(service.image);
+    }
   });
 };
 
