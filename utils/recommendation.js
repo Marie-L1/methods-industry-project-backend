@@ -13,7 +13,7 @@ const readJsonFile = (filename) => {
 const streamingData = readJsonFile('streaming.json');
 const themePackData = readJsonFile('themepack.json');
 
-const getRecommendation = (budget, age) => {
+const getRecommendation = (budget, family_members) => {
     return {
         streaming_services: streamingData.streaming_services,
         theme_packs: themePackData.packages,
