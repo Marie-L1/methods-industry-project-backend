@@ -1,6 +1,19 @@
+import streaming from "../data/streaming.json" assert { type: 'json' };
+import themepack from "../data/themepack.json" assert { type: 'json' };
 
-const streaming = require("../data/streaming.json");
-const themepack = require("../data/themepack.json");
+const familyData = {
+    "budget": 123,
+    "family_members": [
+        {
+            "age": 12,
+            "favorite_genre": "Science"
+        },
+        {
+            "age": 45,
+            "favorite_genre": "Drama"
+        }
+    ]
+};
 // get all unique genres from the json file
 const getGenre = () => {
     const genres = new Set();
@@ -22,7 +35,7 @@ const getPackByGenre = (genre) => {
 
 // Get streaming service based on the theme package's topic 
 const getServiceByTopic = (topic) => {
-    return streaming.streamingServices.filter(service => 
+    return streaming.streaming_services.filter(service => 
         service.topics.includes(topic)
     );
 };
@@ -80,19 +93,7 @@ const getMostCommonTopic = (topicCount) => {
 };
 
 // Example usage:
-const familyData = {
-    "budget": 123,
-    "family_members": [
-        {
-            "age": 12,
-            "favorite_genre": "Science"
-        },
-        {
-            "age": 45,
-            "favorite_genre": "Drama"
-        }
-    ]
-};
+
 
 const recommendation = getRecommendationForFamily(familyData.budget, familyData.family_members);
 console.log(recommendation);
