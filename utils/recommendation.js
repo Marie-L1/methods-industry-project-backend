@@ -16,35 +16,57 @@ const themePackToService = {
 const default_streaming_service = "Netflix";
 
 /**
- * Get recommendations based on the theme pack
- * @param {Array<string>} theme_packs - the list of theme packs
+ * get recommendations based on the theme pack
+ * @param {string} theme_pack - the selected theme pack
+ * @param {number} age - the age of the user
+ * @param {string} genre - the preferred genre
  * @returns {Object} - recommendations for streaming services and theme packs
  */
-const getRecommendation = (theme_packs) => {
+const getRecommendation = (theme_pack, age, genre) => {
     // if no theme packs are provided, return the default
-    if (theme_packs.length === 0){
+    if (!theme_pack || !age || !genre){
         return{
             streaming_service: [default_streaming_service],
-            theme_packs: []
+            theme_pack: []
         };
     }
-    
-    // count each choice of theme pack
-    const countPacks = theme_packs.reduce((counts, pack) => {
-        counts[pack] = (counts[pack] || 0) + 1; // increment count for each theme pack
-        return counts;
-    }, {});
 
-    // find the most picked theme pack in the family (most popluar)
-    const mostPopular = Object.keys(countPacks).reduce((a, b) => countPacks[a] > countPacks[b] ? a : b);
-
-    // determing the streaming service recommendation
-    const serviceRec = themePackToService[mostPopular] || default_streaming_service;
+    const serviceName = themePackToService[theme_pack] || default_streaming_service;
     
+    // filter based on age and genre
+    let filteredServices = [];
+    if (age < 18) {
+        filteredServices = ["Disney+ Premium", "Apple TV+", "Netflix"];
+    } else if (age >= 18) {
+        if (genre === "Drama") {
+            filteredServices = ["Netflix", "Amazon Prime", "Crave"];
+        } else if (genre === "Lifestyle" || genre === "Food" || genre === "DIY") {
+            filteredServices = ["Netflix", "Amazon Prime"];
+        } else if (genre === "Sports") {
+            filteredServices = ["WWE Network HD"];
+        } else if (genre === "Movies") {
+            filteredServices = ["Netflix", "Amazon Prime", "Crave"];
+        } else if (genre === "Science" || genre === "History" || genre === "Discovery" || genre === "Nature") {
+            filteredServices = ["Disney+ Premium", "Apple TV+"];
+        } else if (genre === "Entertainment" || genre === "Reality") {
+            filteredServices = ["Netflix", "Amazon Prime", "Crave"];
+        } else if (genre === "Regional") {
+            filteredServices = ["Abu Dhabi TV"];
+        } else if (genre === "Comedy") {
+            filteredServices = ["Netflix"];
+        } else {
+            filteredServices = [serviceName];
+        }
+    } else {
+        filteredServices = [serviceName];
+    }
+
+    // final recommendation based on filtered services
+    const finalService = filteredServices.length > 0 ? filteredServices[0] : serviceName;
 
     return {
-        streaming_services: [serviceRec],
-        theme_packs:[mostPopular]
+        streaming_services: [finalService],
+        theme_packs:[]
     };
 };
 
