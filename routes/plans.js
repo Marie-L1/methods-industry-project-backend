@@ -40,7 +40,7 @@ const router = express.Router();
 
 router.post("/", logRequest, validatePlanInput, (req, res) => {
   try{
-    const { budget, family_memebers, genre } = req.body;
+    const { genre } = req.body;
 
     // ensure the genre exits in the avalible genres
     const avaliableGenres = getGenre();

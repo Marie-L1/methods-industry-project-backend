@@ -1,8 +1,6 @@
 import streaming from "../data/streaming.json" assert { type: 'json' };
 import themepack from "../data/themepack.json" assert { type: 'json' };
 
-// const streaming = require("../data/streaming.json");
-// const themepack = require("../data/themepack.json");
 
 // get all unique genres from the json file
 const getGenre = () => {
